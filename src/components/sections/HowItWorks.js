@@ -49,9 +49,13 @@ const HowItWorks = () => {
               <p>{step.desc}</p>
               
               <div className="process-img-wrap">
-                <img src={processIconsImage} 
-                     alt={step.title} 
-                     style={{ objectPosition: `-${idx * 100}% 0`, objectFit: 'cover'}} />
+                <div 
+                  className="process-icon-sprite" 
+                  style={{ 
+                    backgroundImage: `url(${processIconsImage})`,
+                    backgroundPosition: `${(idx * 100) / 3}% 0`
+                  }} 
+                />
               </div>
             </div>
           ))}
