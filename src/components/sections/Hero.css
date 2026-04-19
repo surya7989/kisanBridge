@@ -1,0 +1,198 @@
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 120px 0 80px;
+  background-image: url('../../assets/images/hero_bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.4) 40%, rgba(255,255,255,0.1) 100%);
+  z-index: 1;
+}
+
+.hero-section > .container {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-title {
+  font-size: 56px;
+  font-weight: 700;
+  color: #111;
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-family: var(--font-display);
+}
+
+.hero-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 32px 0;
+  width: 100%;
+  max-width: 400px;
+}
+
+.divider-line {
+  height: 1px;
+  flex: 1;
+  background: rgba(26, 122, 74, 0.2);
+}
+
+.divider-icon {
+  color: var(--green-mid);
+}
+
+.audience-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  max-width: 1100px;
+  margin-top: 24px;
+}
+
+@media (min-width: 768px) {
+  .audience-cards {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.aud-card {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 32px 24px;
+  text-align: left;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  min-height: 400px; /* Gives the elongated look seen in Image 1 */
+  display: flex;
+  flex-direction: column;
+}
+
+.aud-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+  opacity: 0.3;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.aud-card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.aud-icon-wrap {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+}
+
+.aud-card--green .aud-icon-wrap { background: #eef8f2; }
+.aud-card--amber .aud-icon-wrap { background: #fdf6e7; }
+.aud-card--blue .aud-icon-wrap { background: #eef5fb; }
+
+.aud-card h3 {
+  font-size: 22px;
+  margin: 0;
+  font-family: var(--font-body);
+  font-weight: 600;
+}
+
+.aud-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.aud-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 16px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.feature-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-top: 8px;
+  flex-shrink: 0;
+}
+
+.aud-card--green .feature-dot { background: var(--green-mid); }
+.aud-card--amber .feature-dot { background: var(--amber-mid); }
+.aud-card--blue .feature-dot { background: var(--blue-mid); }
+
+/* Faint lines background inside card body */
+.aud-card-body {
+  flex: 1;
+  position: relative;
+  margin-top: 32px;
+}
+
+.aud-card-body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: repeating-linear-gradient(
+    transparent,
+    transparent 28px,
+    rgba(0, 0, 0, 0.03) 28px,
+    rgba(0, 0, 0, 0.03) 29px
+  );
+  z-index: 1;
+}
+
+/* Wheat decorations at bottom of cards */
+.aud-card-decor {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 120px;
+  height: 120px;
+  background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M50 100C50 100 20 80 20 40C20 20 35 10 50 10C65 10 80 20 80 40C80 80 50 100 50 100Z" fill="rgba(232, 160, 32, 0.1)"/></svg>');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  z-index: 1;
+  opacity: 0.6;
+}

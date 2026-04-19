@@ -1,0 +1,132 @@
+.cta-section {
+  padding: 100px 0;
+  position: relative;
+  background-color: var(--green-deep);
+  color: var(--white);
+  text-align: center;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('../../assets/images/hero_bg.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.15;
+  mix-blend-mode: luminosity;
+}
+
+/* Add a gradient fade to blend into the footer */
+.cta-section::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 150px;
+  background: linear-gradient(to bottom, transparent, var(--green-deep));
+  pointer-events: none;
+}
+
+.cta-container {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cta-title {
+  font-family: var(--font-display);
+  font-size: 52px;
+  color: var(--white);
+  margin-bottom: 16px;
+}
+
+.cta-title span {
+  color: #a7f3d0; /* A soft minty green to contrast */
+}
+
+.cta-desc {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 600px;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.cta-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 400px;
+}
+
+@media (min-width: 640px) {
+  .cta-actions {
+    flex-direction: row;
+    justify-content: center;
+    max-width: none;
+  }
+}
+
+.btn-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 32px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  min-width: 200px;
+}
+
+.btn-cta-light {
+  background: var(--white);
+  color: var(--green-deep);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.btn-cta-light:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+.btn-cta-outline {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.btn-cta-outline:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Subtle decorative lines like in the design */
+.cta-decor {
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.cta-decor-1 {
+  width: 600px;
+  height: 600px;
+  top: -300px;
+  left: -200px;
+}
+
+.cta-decor-2 {
+  width: 800px;
+  height: 800px;
+  bottom: -400px;
+  right: -300px;
+}

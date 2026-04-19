@@ -1,0 +1,132 @@
+.storage-section {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 0;
+  background-image: url('../../assets/images/warehouse_bg.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.storage-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(238, 248, 242, 0.98) 0%, rgba(238, 248, 242, 0.9) 40%, rgba(255, 255, 255, 0) 100%);
+  z-index: 1;
+}
+
+.storage-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+@media (min-width: 992px) {
+  .storage-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.storage-content {
+  flex: 1;
+  max-width: 500px;
+}
+
+.storage-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--green-dark);
+  background: rgba(26, 122, 74, 0.1);
+  padding: 8px 18px;
+  border-radius: 99px;
+  margin-bottom: 24px;
+  border: 1px solid rgba(26, 122, 74, 0.2);
+}
+
+.storage-title {
+  font-family: var(--font-display);
+  font-size: 48px;
+  line-height: 1.1;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+}
+
+.storage-title span {
+  color: var(--green-mid);
+}
+
+.storage-desc {
+  font-size: 17px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.storage-features {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.s-feature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.s-feature-icon {
+  color: var(--white);
+  background: var(--green-mid);
+  border-radius: 50%;
+  padding: 4px;
+}
+
+.storage-visual {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.portal-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 48px 40px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+  border: 1px solid rgba(255,255,255,0.8);
+  text-align: center;
+  max-width: 440px;
+  width: 100%;
+}
+
+.portal-card h3 {
+  font-family: var(--font-display);
+  font-size: 28px;
+  color: var(--green-deep);
+  margin-bottom: 16px;
+}
+
+.portal-card p {
+  color: var(--text-muted);
+  font-size: 16px;
+  margin-bottom: 32px;
+}
+
+.portal-card .btn-primary {
+  width: 100%;
+  padding: 16px;
+  font-size: 16px;
+}

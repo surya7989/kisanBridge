@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -5,46 +7,46 @@
 }
 
 :root {
-  --green-deep:    #0a3d1f;
+  --green-deep:    #0a2e16;
   --green-dark:    #145a2e;
   --green-mid:     #1a7a4a;
   --green-bright:  #22a35e;
+  --green-accent:  #5DCAA5;
   --green-light:   #d4f0e0;
-  --green-pale:    #edf8f2;
+  --green-pale:    #f5faf7;
 
+  --amber-dark:    #b37a18;
   --amber-mid:     #e8a020;
   --amber-light:   #fdf3dc;
 
   --blue-mid:      #1a5fa8;
   --blue-light:    #dceefb;
 
-  --text-primary:  #111c14;
-  --text-muted:    #4a6358;
-  --text-faint:    #7a9488;
+  --text-primary:  #111827;
+  --text-muted:    #4b5563;
+  --text-faint:    #9ca3af;
 
   --white:         #ffffff;
-  --surface:       #f5faf7;
-  --border:        rgba(26, 122, 74, 0.15);
+  --surface:       #f9fafb;
+  --surface-alt:   #f3f4f6;
+  --border:        #e5e7eb;
 
   --font-display:  'Playfair Display', Georgia, serif;
-  --font-body:     'DM Sans', sans-serif;
+  --font-body:     'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
-  --radius-sm:     6px;
-  --radius-md:     10px;
-  --radius-lg:     16px;
-  --radius-xl:     24px;
+  --radius-sm:     8px;
+  --radius-md:     12px;
+  --radius-lg:     24px;
+  --radius-xl:     32px;
 
-  --shadow-card:   0 2px 16px rgba(10, 61, 31, 0.08);
-  --shadow-hover:  0 6px 28px rgba(10, 61, 31, 0.14);
+  --shadow-sm:     0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md:     0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg:     0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-hover:  0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 html {
   scroll-behavior: smooth;
-}
-
-section[id], 
-footer[id] {
-  scroll-margin-top: 80px;
 }
 
 body {
@@ -52,65 +54,136 @@ body {
   font-size: 16px;
   line-height: 1.6;
   color: var(--text-primary);
-  background: var(--white);
+  background-color: var(--surface);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
+  font-weight: 700;
   line-height: 1.2;
+  color: var(--text-primary);
 }
 
 button {
   font-family: var(--font-body);
   cursor: pointer;
   border: none;
+  background: none;
   outline: none;
+  transition: all 0.2s ease-in-out;
 }
 
 a {
   text-decoration: none;
   color: inherit;
+  transition: color 0.2s ease-in-out;
 }
 
 img {
   max-width: 100%;
+  height: auto;
   display: block;
 }
 
+ul {
+  list-style: none;
+}
+
+/* Base Layout Classes */
 .container {
-  max-width: 1140px;
+  width: 100%;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 0 24px;
 }
 
-.section-tag {
-  display: inline-block;
-  font-size: 12px;
+.section-padding {
+  padding: 80px 0;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding: 120px 0;
+  }
+}
+
+/* Typography Utilities */
+.text-center { text-align: center; }
+.text-green { color: var(--green-mid); }
+.font-medium { font-weight: 500; }
+.font-semibold { font-weight: 600; }
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  border-radius: 9999px;
   font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--green-mid);
-  background: var(--green-pale);
-  border: 1px solid var(--green-light);
-  padding: 4px 14px;
-  border-radius: 99px;
-  margin-bottom: 14px;
-}
-
-.section-heading {
-  font-size: 36px;
-  color: var(--text-primary);
-  margin-bottom: 10px;
-}
-
-.section-heading span {
-  color: var(--green-mid);
-}
-
-.section-sub {
   font-size: 15px;
-  color: var(--text-muted);
-  max-width: 520px;
-  line-height: 1.7;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--green-dark);
+  color: var(--white);
+  box-shadow: 0 4px 14px rgba(20, 90, 46, 0.2);
+}
+
+.btn-primary:hover {
+  background-color: var(--green-deep);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(20, 90, 46, 0.3);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+}
+
+.btn-outline:hover {
+  border-color: var(--green-mid);
+  color: var(--green-mid);
+}
+
+.btn-white {
+  background-color: var(--white);
+  color: var(--green-dark);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+
+.btn-white:hover {
+  background-color: var(--surface);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Utilities */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: var(--shadow-lg);
+  border-radius: var(--radius-lg);
+}
+
+.texture-overlay {
+  position: relative;
+}
+
+.texture-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+  opacity: 0.6;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 0;
 }
