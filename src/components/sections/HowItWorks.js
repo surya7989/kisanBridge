@@ -1,5 +1,8 @@
 import { ArrowRight } from 'lucide-react';
-import processIconsImage from '../../assets/images/process_icons.png';
+import step1 from '../../assets/images/step1.png';
+import step2 from '../../assets/images/step2.png';
+import step3 from '../../assets/images/step3.png';
+import step4 from '../../assets/images/step4.png';
 import './HowItWorks.css';
 
 const processData = [
@@ -7,21 +10,25 @@ const processData = [
     num: '01',
     title: 'List Your Crop',
     desc: 'Add your crop details, quantity and expected price in minutes.',
+    img: step1
   },
   {
     num: '02',
     title: 'Traders Find & Request Sample',
     desc: 'Local traders discover your listing and request a crop sample.',
+    img: step2
   },
   {
     num: '03',
     title: 'QR Code Verification',
     desc: 'Verify the sample authenticity using our secure QR code system.',
+    img: step3
   },
   {
     num: '04',
     title: 'Deal & Deliver',
     desc: 'Finalize the deal at the agreed price and arrange delivery.',
+    img: step4
   }
 ];
 
@@ -49,13 +56,7 @@ const HowItWorks = () => {
               <p>{step.desc}</p>
               
               <div className="process-img-wrap">
-                <div 
-                  className="process-icon-sprite" 
-                  style={{ 
-                    backgroundImage: `url(${processIconsImage})`,
-                    backgroundPosition: `${(idx * 100) / 3}% 0`
-                  }} 
-                />
+                <img src={step.img} alt={step.title} />
               </div>
             </div>
           ))}
