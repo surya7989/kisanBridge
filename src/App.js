@@ -5,6 +5,7 @@ import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 
 import Hero from './components/sections/Hero';
+import AudienceStrip from './components/sections/AudienceStrip';
 import TrustSection from './components/sections/TrustSection';
 import HowItWorks from './components/sections/HowItWorks';
 import StorageSection from './components/sections/StorageSection';
@@ -16,6 +17,7 @@ function App() {
       <Navbar />
       <main>
         <Hero />
+        <AudienceStrip />
         <TrustSection />
         <HowItWorks />
         <StorageSection />
