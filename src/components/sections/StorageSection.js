@@ -2,6 +2,13 @@ import React from 'react';
 import { Check } from 'lucide-react';
 import './StorageSection.css';
 
+const storageFeatures = [
+  'Real-time stock tracking',
+  'Automated digital weight receipts',
+  'Flexible storage capacity management',
+  'Integrated logistics support'
+];
+
 const StorageSection = () => {
   return (
     <section className="storage-section" id="storages">
@@ -15,14 +22,12 @@ const StorageSection = () => {
           </p>
           
           <div className="storage-features">
-            <div className="s-feature">
-              <Check size={18} className="s-feature-icon" strokeWidth={3} />
-              Real-time stock tracking
-            </div>
-            <div className="s-feature">
-              <Check size={18} className="s-feature-icon" strokeWidth={3} />
-              Automated digital weight receipts
-            </div>
+            {storageFeatures.map((feature, idx) => (
+              <div key={idx} className="s-feature">
+                <Check size={18} className="s-feature-icon" strokeWidth={3} />
+                {feature}
+              </div>
+            ))}
           </div>
         </div>
 

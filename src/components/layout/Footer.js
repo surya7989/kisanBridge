@@ -3,6 +3,17 @@ import { Phone, Mail } from 'lucide-react';
 import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
 import './Footer.css';
 
+const contactInfo = [
+  { icon: Phone, text: 'Call Us: +91 9876543210', href: 'tel:+919876543210' },
+  { icon: Mail, text: 'Email: info@kisanbridge.com', href: 'mailto:info@kisanbridge.com' }
+];
+
+const socialLinks = [
+  { icon: FaFacebook, label: 'Facebook', href: '#' },
+  { icon: FaTwitter, label: 'Twitter', href: '#' },
+  { icon: FaInstagram, label: 'Instagram', href: '#' }
+];
+
 const Footer = () => {
   return (
     <footer className="footer">
@@ -14,31 +25,25 @@ const Footer = () => {
           </div>
           
           <div className="footer__contact">
-            <a href="tel:+919876543210" className="contact-item">
-              <Phone size={16} />
-              <span>Call Us: +91 9876543210</span>
-            </a>
-            <a href="mailto:info@kisanbridge.com" className="contact-item">
-              <Mail size={16} />
-              <span>Email: info@kisanbridge.com</span>
-            </a>
+            {contactInfo.map((item, idx) => (
+              <a key={idx} href={item.href} className="contact-item">
+                <item.icon size={16} />
+                <span>{item.text}</span>
+              </a>
+            ))}
           </div>
         </div>
 
         <div className="footer__bottom">
           <div className="copyright">
-            &copy; 2026 KisanBridge. All rights reserved.
+            &copy; {new Date().getFullYear()} KisanBridge. All rights reserved.
           </div>
           <div className="social-links">
-            <a href="#" className="social-icon" aria-label="Facebook">
-              <FaFacebook size={16} />
-            </a>
-            <a href="#" className="social-icon" aria-label="Twitter">
-              <FaTwitter size={16} />
-            </a>
-            <a href="#" className="social-icon" aria-label="Instagram">
-              <FaInstagram size={16} />
-            </a>
+            {socialLinks.map((social, idx) => (
+              <a key={idx} href={social.href} className="social-icon" aria-label={social.label}>
+                <social.icon size={16} />
+              </a>
+            ))}
           </div>
         </div>
       </div>
