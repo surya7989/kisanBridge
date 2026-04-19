@@ -1,7 +1,10 @@
 .audience-section {
   position: relative;
   padding: 80px 0;
-  background-color: var(--surface);
+  background-image: url('../../assets/images/hero_bg.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   text-align: center;
 }
 
@@ -9,9 +12,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
-  opacity: 0.3;
-  pointer-events: none;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.4) 0%, rgba(255, 255, 255, 0.7) 40%, rgba(255, 255, 255, 0.9) 100%);
   z-index: 1;
 }
 
